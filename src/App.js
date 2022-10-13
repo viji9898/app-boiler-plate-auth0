@@ -13,6 +13,8 @@ function App() {
   const { getAccessTokenSilently, user } = useAuth0();
   const [helloWorld, setHelloWorld] = useState("");
   const [userData, setUserData] = useState("");
+  const [spinner, setSpinner] = useState(false);
+
   useEffect(() => {
     axios
       .get(".netlify/functions/getHelloWorld", {
@@ -23,6 +25,7 @@ function App() {
       });
 
     const getUsers = async () => {
+      setSpinner(true);
       const accessToken = await getAccessTokenSilently();
       const userId = user.sub;
       axios
@@ -35,6 +38,7 @@ function App() {
         })
         .then(function (response) {
           setUserData(response.data.data);
+          setSpinner(false);
         });
     };
     getUsers();
@@ -47,7 +51,13 @@ function App() {
         <Route
           exact
           path="/"
-          element={<LandingPage helloWorld={helloWorld} userData={userData} />}
+          element={
+            <LandingPage
+              helloWorld={helloWorld}
+              userData={userData}
+              spinner={spinner}
+            />
+          }
         />
 
         <Route exact path="/*" element={<NotFound />} />

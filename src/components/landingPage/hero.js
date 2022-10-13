@@ -1,4 +1,4 @@
-import { Button, Col, Divider, Row } from "antd";
+import { Button, Col, Divider, Row, Spin } from "antd";
 import {
   LoginButton,
   LogoutButton,
@@ -7,7 +7,7 @@ import {
 import { useAuth0 } from "@auth0/auth0-react";
 import { Profile } from "./profile";
 
-export const Hero = ({ helloWorld, userData }) => {
+export const Hero = ({ helloWorld, userData, spinner }) => {
   const { user, isAuthenticated } = useAuth0();
   return (
     <Row
@@ -47,7 +47,7 @@ export const Hero = ({ helloWorld, userData }) => {
           <h2>Auth0 Login:</h2>
         </div>
         {isAuthenticated ? <LogoutButton /> : <LoginButton />}
-        {isAuthenticated ? <LogoutButton /> : <RegisterButton />}
+        {!isAuthenticated && <RegisterButton />}
       </Col>
       <Col xs={24} sm={24} md={8}>
         <div style={{ fontWeight: "600" }}>
@@ -112,7 +112,9 @@ export const Hero = ({ helloWorld, userData }) => {
             <h2>Auth0-Fauna-Token:</h2>
           </div>
           {helloWorld ? (
-            <pre>{JSON.stringify(userData, null, 2)}</pre>
+            <Spin spinning={spinner}>
+              <pre>{JSON.stringify(userData, null, 2)}</pre>
+            </Spin>
           ) : (
             <pre>{JSON.stringify({ faunaDb: null }, null, 2)}</pre>
           )}

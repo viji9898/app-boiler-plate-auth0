@@ -2,7 +2,7 @@ import { Hero } from "../components/landingPage/hero";
 import { Footer } from "../components/navigation/footer";
 import { DynamicMetaTags } from "../utils/dynamicMetaTags";
 
-export const LandingPage = ({ helloWorld, userData }) => {
+export const LandingPage = ({ helloWorld, userData, spinner }) => {
   return (
     <div style={{ justifyContent: "center", display: "flex" }}>
       <DynamicMetaTags
@@ -16,7 +16,8 @@ export const LandingPage = ({ helloWorld, userData }) => {
         ogUrl={``}
       />
       <div>
-        <Hero helloWorld={helloWorld} userData={userData} />
+        <Hero helloWorld={helloWorld} userData={userData} spinner={spinner} />
+
         <Footer />
       </div>
     </div>
