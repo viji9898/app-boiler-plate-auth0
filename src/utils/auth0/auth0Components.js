@@ -8,6 +8,16 @@ export const LoginButton = () => {
   return <Button onClick={() => loginWithRedirect()}>Log In</Button>;
 };
 
+export const RegisterButton = () => {
+  const { loginWithRedirect } = useAuth0();
+
+  return (
+    <Button onClick={() => loginWithRedirect({ screen_hint: "signup" })}>
+      Register
+    </Button>
+  );
+};
+
 export const LogoutButton = ({ type }) => {
   const { logout } = useAuth0();
 

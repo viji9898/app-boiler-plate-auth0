@@ -1,9 +1,13 @@
 import { Button, Col, Divider, Row } from "antd";
-import { LoginButton, LogoutButton } from "../../utils/auth0/auth0Components";
+import {
+  LoginButton,
+  LogoutButton,
+  RegisterButton,
+} from "../../utils/auth0/auth0Components";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Profile } from "./profile";
 
-export const Hero = ({ helloWorld }) => {
+export const Hero = ({ helloWorld, userData }) => {
   const { user, isAuthenticated } = useAuth0();
   return (
     <Row
@@ -43,6 +47,7 @@ export const Hero = ({ helloWorld }) => {
           <h2>Auth0 Login:</h2>
         </div>
         {isAuthenticated ? <LogoutButton /> : <LoginButton />}
+        {isAuthenticated ? <LogoutButton /> : <RegisterButton />}
       </Col>
       <Col xs={24} sm={24} md={8}>
         <div style={{ fontWeight: "600" }}>
@@ -84,6 +89,7 @@ export const Hero = ({ helloWorld }) => {
           ) : (
             <pre>{JSON.stringify({ faunaDb: null }, null, 2)}</pre>
           )}
+          <p>API call made with admin Key</p>
         </div>
       </Col>
 
@@ -91,7 +97,31 @@ export const Hero = ({ helloWorld }) => {
       <Col xs={24} sm={24} md={8}>
         <Profile />
       </Col>
-      <Col xs={24} sm={24} md={8}></Col>
+      <Col xs={24} sm={24} md={8}>
+        <div
+          style={{
+            maxWidth: "400px",
+            overflow: "scroll",
+            backgroundColor: "white",
+            padding: "15px",
+            // margin: "10px 0px",
+            height: "100%",
+          }}
+        >
+          <div style={{ fontWeight: "600" }}>
+            <h2>Auth0-Fauna-Token:</h2>
+          </div>
+          {helloWorld ? (
+            <pre>{JSON.stringify(userData, null, 2)}</pre>
+          ) : (
+            <pre>{JSON.stringify({ faunaDb: null }, null, 2)}</pre>
+          )}
+          <p>API call made with Auth0 AccessProvider </p>
+          <p>
+            Access restricted based on <code>user role</code>{" "}
+          </p>
+        </div>
+      </Col>
     </Row>
   );
 };

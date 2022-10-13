@@ -12,6 +12,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 function App() {
   const { getAccessTokenSilently } = useAuth0();
   const [helloWorld, setHelloWorld] = useState("");
+  const [userData, setUserData] = useState("");
   useEffect(() => {
     axios
       .get(".netlify/functions/getHelloWorld", {
@@ -31,7 +32,7 @@ function App() {
           baseURL: "/",
         })
         .then(function (response) {
-          setHelloWorld(response.data.data);
+          setUserData(response.data.data);
         });
     };
     getUsers();
@@ -44,7 +45,7 @@ function App() {
         <Route
           exact
           path="/"
-          element={<LandingPage helloWorld={helloWorld} />}
+          element={<LandingPage helloWorld={helloWorld} userData={userData} />}
         />
 
         <Route exact path="/*" element={<NotFound />} />
