@@ -10,7 +10,7 @@ import { LandingPage } from "./pages/LandingPage";
 import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
-  const { getAccessTokenSilently } = useAuth0();
+  const { getAccessTokenSilently, user } = useAuth0();
   const [helloWorld, setHelloWorld] = useState("");
   const [userData, setUserData] = useState("");
   useEffect(() => {
@@ -24,8 +24,10 @@ function App() {
 
     const getUsers = async () => {
       const accessToken = await getAccessTokenSilently();
+      const userId = user.sub;
       axios
-        .get(".netlify/functions/getUsers", {
+        .get(".netlify/functions/getUser", {
+          params: { userId },
           headers: {
             token: accessToken,
           },
@@ -36,7 +38,7 @@ function App() {
         });
     };
     getUsers();
-  }, [getAccessTokenSilently]);
+  }, [getAccessTokenSilently, user]);
 
   return (
     <Router>
