@@ -33,68 +33,7 @@ export const Footer = () => {
           </Space>
         </Col>
         <Col xs={12} sm={12} md={5}>
-          <p style={{ fontWeight: "700" }}>Company</p>
-          <ul style={{ listStyleType: "none", padding: "0px" }}>
-            <li>
-              <a
-                style={{
-                  fontSize: "14px",
-                  textDecoration: "none",
-                  color: "salmon",
-                }}
-                href={"https://techhq.lk/discover/techhq"}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Careers
-              </a>
-            </li>
-            <li>
-              <a
-                style={{
-                  fontSize: "14px",
-                  textDecoration: "none",
-                  color: "salmon",
-                }}
-                href={"https://techtalent.lk"}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Terms of Service
-              </a>
-            </li>
-            <li>
-              <a
-                style={{
-                  fontSize: "14px",
-                  textDecoration: "none",
-                  color: "salmon",
-                }}
-                href={"https://techtalent.lk"}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Privacy Profile
-              </a>
-            </li>
-            <li>
-              <a
-                style={{
-                  fontSize: "14px",
-                  textDecoration: "none",
-                  color: "salmon",
-                }}
-                href={"https://techtalent.lk"}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Contact Us
-              </a>
-            </li>
-          </ul>
-        </Col>
-        <Col xs={12} sm={12} md={5}>
-          <p style={{ fontWeight: "700" }}>Community</p>
+          <p style={{ fontWeight: "700" }}>FaunaDb</p>
           <ul style={{ listStyleType: "none", padding: "0px" }}>
             <li>
               <a
@@ -104,40 +43,12 @@ export const Footer = () => {
                   color: "salmon",
                 }}
                 href={
-                  "https://join.slack.com/t/tech-talent-lk/shared_invite/zt-1at2w6tr5-to9Z_wO8I8wIR__doFkVLA"
+                  "https://auth0.com/blog/what-is-fauna-and-how-does-it-work-with-auth0/"
                 }
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Join our Slack
-              </a>
-            </li>
-            <li>
-              <a
-                style={{
-                  fontSize: "14px",
-                  textDecoration: "none",
-                  color: "salmon",
-                }}
-                href={"https://twitter.com/"}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Twitter
-              </a>
-            </li>
-            <li>
-              <a
-                style={{
-                  fontSize: "14px",
-                  textDecoration: "none",
-                  color: "salmon",
-                }}
-                href={"https://www.linkedin.com/company/techhq-lk/"}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Linkedin
+                How Does It Work With Auth0?
               </a>
             </li>
             <li>
@@ -148,18 +59,18 @@ export const Footer = () => {
                   color: "salmon",
                 }}
                 href={
-                  "https://github.com/viji9898/app-boiler-plate/tree/hot-fixes"
+                  "https://fauna.com/blog/setting-up-sso-authentication-in-fauna-with-auth0"
                 }
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Github
+                Fauna with Auth0
               </a>
             </li>
           </ul>
         </Col>
         <Col xs={12} sm={12} md={5}>
-          <p style={{ fontWeight: "700" }}>Our Impact</p>
+          <p style={{ fontWeight: "700" }}>Auth0</p>
           <ul style={{ listStyleType: "none", padding: "0px" }}>
             <li>
               <a
@@ -168,11 +79,11 @@ export const Footer = () => {
                   textDecoration: "none",
                   color: "salmon",
                 }}
-                href={"https://unconditionalcompassion.org/"}
+                href={"https://auth0.com/docs/quickstart/spa/react/01-login"}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Foundation Goodness
+                React: Login
               </a>
             </li>
             <li>
@@ -182,11 +93,13 @@ export const Footer = () => {
                   textDecoration: "none",
                   color: "salmon",
                 }}
-                href={"https://techforgood.lk"}
+                href={
+                  "https://auth0.com/docs/quickstart/spa/react/02-calling-an-api"
+                }
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                techForGood
+                React: Call an API
               </a>
             </li>
             <li>
@@ -196,11 +109,47 @@ export const Footer = () => {
                   textDecoration: "none",
                   color: "salmon",
                 }}
-                href={"https://techforgood.lk"}
+                href={"https://auth0.com/docs/libraries/auth0-react"}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Impact Statement
+                SDK for Single Page Apps
+              </a>
+            </li>
+
+            <li>
+              <a
+                style={{
+                  fontSize: "14px",
+                  textDecoration: "none",
+                  color: "salmon",
+                }}
+                href={
+                  "https://auth0.com/docs/customize/actions/flows-and-triggers/post-user-registration-flow"
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Post User Registration Flow
+              </a>
+            </li>
+          </ul>
+        </Col>
+        <Col xs={12} sm={12} md={5}>
+          <p style={{ fontWeight: "700" }}>Fauna-Auth0</p>
+          <ul style={{ listStyleType: "none", padding: "0px" }}>
+            <li>
+              <a
+                style={{
+                  fontSize: "14px",
+                  textDecoration: "none",
+                  color: "salmon",
+                }}
+                href={"https://www.youtube.com/watch?v=a3YIzB70WQQ"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                youTube - Fauna and Auth0 Setup
               </a>
             </li>
           </ul>
