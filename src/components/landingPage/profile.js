@@ -42,7 +42,6 @@ export const Profile = () => {
           <Space>
             <Avatar src={user.picture} alt={user.name} />
             <h2>{user.name}</h2>
-            <p>{user.email}</p>
           </Space>
         </div>
         <h3>User Metadata</h3>
